@@ -4,7 +4,7 @@ import axios from "axios";
 import CurrentDate from "./CurrentDate";
 
 const Weather = () => {
-  const [city, setCity] = useState("");
+  const [location, setLocation] = useState("");
   const [weatherData, setWeatherData] = useState(null);
 
   const apiKey = "94292a708cbc285b8248f4e63ffa0bc4";
@@ -12,7 +12,7 @@ const Weather = () => {
   const getWeatherData = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=it`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric&lang=it`
       );
 
       setWeatherData(response.data);
@@ -20,6 +20,7 @@ const Weather = () => {
       console.error("Error fetching weather data:", error);
     }
   };
+
   const getWeatherIconUrl = (iconCode) => {
     return `https://openweathermap.org/img/w/${iconCode}.png`;
   };
@@ -28,15 +29,17 @@ const Weather = () => {
     <div className="bg-body-secondary">
       <div className="mb-3 d-flex align-items-center justify-content-around">
         <CurrentDate />
-        <label htmlFor="cityInput" className="form-label"></label>
-        <input
-          type="text"
-          className="form-control w-50"
-          placeholder="Type a city here..."
-          id="cityInput"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
+        <div className="d-flex flex-column w-50">
+          <label htmlFor="locationInput" className="form-label">Enter City and Country:</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="es: Rome,IT"
+            id="locationInput"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
         <Button onClick={getWeatherData} variant="success text-white my-3">
           Search
         </Button>
@@ -45,7 +48,7 @@ const Weather = () => {
       {weatherData && (
         <div className="d-flex justify-content-center">
           <div className="py-4 w-100 text-center">
-            <h2 className="fw-bold">Weather in: {weatherData.name}</h2>
+            <h2 className="fw-bold">Weather in: {weatherData.name}, {weatherData.sys.country}</h2>
             <p className="fw-bold fs-4">
               Temperatura: {weatherData.main.temp}°C
             </p>

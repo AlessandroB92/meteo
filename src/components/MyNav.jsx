@@ -11,7 +11,7 @@ const MyNav = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <Link className="nav-link text-white" to="/Prevision">
-              Previsioni
+              Prevision
             </Link>
           </ul>
         </div>
