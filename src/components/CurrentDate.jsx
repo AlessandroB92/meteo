@@ -30,7 +30,7 @@ const DateTime = () => {
   };
 
   return (
-    <div className="container py-3">
+    <div className="cpntainer-fluid py-3 w-30">
         <h4>Today's</h4>
       <p>{formatDate(currentDateTime)}</p>
       <p>{formatTime(currentDateTime)}</p>

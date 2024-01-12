@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyHeader = () => {
+const MyNav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
@@ -23,4 +23,4 @@ const MyHeader = () => {
   );
 };
 
-export default MyHeader;
+export default MyNav;

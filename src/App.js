@@ -1,13 +1,13 @@
 import React from 'react';
 import Weather from './components/Weather';
-import MyHeader from './components/MyHeader';
+import MyNav from './components/MyNav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <>
     <BrowserRouter>
-      <MyHeader/>
+      <MyNav/>
       <Routes>
         <Route path='/' element={<Weather/>}></Route>
       </Routes>
