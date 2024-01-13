@@ -34,7 +34,7 @@ const Weather = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="es: Rome , IT"
+            placeholder="es: Rome ,IT"
             id="locationInput"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -49,15 +49,16 @@ const Weather = () => {
         <div className="d-flex justify-content-center">
           <div className="py-4 w-100 text-center">
             <h2 className="fw-bold">Weather in: {weatherData.name}, {weatherData.sys.country}</h2>
-            <p className="fw-bold fs-4">
-              Temperatura: {weatherData.main.temp}°C
+            <p className="fs-4 text-secondary">
+              Temperature: <span className="text-dark fw-bold">{weatherData.main.temp_max} °C</span> 
             </p>
-            <p className="fw-bold fs-4">
-              Umidità: {weatherData.main.humidity}%
+            <p className="fs-4 text-secondary">
+              Humidity: <span className="text-dark fw-bold">{weatherData.main.humidity} %</span>
             </p>
-            <p className="fw-bold fs-4">
-              Weather: {weatherData.weather[0].description}
+            <p className="fs-4 text-secondary">
+              Weather: <span className="text-dark fw-bold">{weatherData.weather[0].description}</span>
             </p>
+            <p className="fs-4 text-secondary">Wind speed: <span className="text-dark fw-bold">{weatherData.wind.speed} km/h</span></p>
             <img
               src={getWeatherIconUrl(weatherData.weather[0].icon)}
               alt={weatherData.weather[0].description}
