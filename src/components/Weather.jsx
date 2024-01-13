@@ -45,7 +45,7 @@ const Weather = () => {
             />
           </Col>
         <Col>
-          <Button onClick={getWeatherData} variant="info text-white">
+          <Button onClick={getWeatherData} variant="primary text-white">
             Search
           </Button>
         </Col>
@@ -55,39 +55,42 @@ const Weather = () => {
       {weatherData && (
         <div className="d-flex justify-content-center">
           <Row className="py-4 w-100 text-center">
-              <h2 className="fw-bold">Weather in: {weatherData.name}, {weatherData.sys.country}</h2>
+              <h2 className="fw-bold"> {weatherData.name}, {weatherData.sys.country}</h2>
               <Col xs={12}>
               <p className="fs-4">
-                Weather: <span className="text-dark fw-bold">{weatherData.weather[0].description}</span>
+                Weather: <span className="fw-bold text-capitalize">{weatherData.weather[0].description} </span>
               </p>
                 <img
                 src={getWeatherIconUrl(weatherData.weather[0].icon)}
                 alt={weatherData.weather[0].description}
               />
               </Col>
-            <Col className="d-flex flex-column justify-content-center align-items-center p-3 bg-primary-subtle rounded-4 m-2">
-              <p className="fs-4">
-                Temperature: <span className="text-dark fw-bold">{weatherData.main.temp} °C</span> 
+            <Col className="d-flex flex-column justify-content-center align-items-center p-3 rounded-4 shadow-lg p-3 mb-5 bg-body-secondary rounded-4 m-2">
+              <p className="fs-5 text-secondary">
+                Temperature: <span className="fw-bold text-dark">{weatherData.main.temp} °C</span> 
               </p>
-              <p className="fs-4">
-                Max - Min: <span className="text-dark fw-bold">{weatherData.main.temp_max} / {weatherData.main.temp_min} °C</span> 
+              <p className="fs-5 text-secondary">
+                Max: <span className="fw-bold text-dark">{weatherData.main.temp_max} °C</span> 
+              </p>
+              <p className="fs-5 text-secondary">
+                Min: <span className="fw-bold text-dark">{weatherData.main.temp_min} °C</span> 
               </p>
               <FaTemperatureHigh className="fs-3"/>
             </Col>
-            <Col className="d-flex flex-column justify-content-center align-items-center p-3 bg-primary-subtle rounded-4 m-2">
-              <p className="fs-4">
+            <Col className="d-flex flex-column justify-content-center align-items-center p-3 rounded-4 shadow-lg p-3 mb-5 bg-body-secondary rounded-4 m-2">
+              <p className="fs-5 text-secondary">
                 Humidity: <span className="text-dark fw-bold">{weatherData.main.humidity} %</span>
               </p>
               <WiHumidity className="fs-1" />
             </Col>
-            <Col className="d-flex flex-column justify-content-center align-items-center p-3 bg-primary-subtle rounded-4 m-2">
-              <p className="fs-4">
-                Weather: <span className="text-dark fw-bold">{weatherData.weather[0].description}</span>
+            <Col className="d-flex flex-column justify-content-center align-items-center p-3 rounded-4 shadow-lg p-3 mb-5 bg-body-secondary rounded-4 m-2">
+              <p className="fs-5 text-secondary">
+                Weather: <span className="text-dark fw-bold text-capitalize">{weatherData.weather[0].description}</span>
               </p>
             </Col>
-            <Col className="d-flex flex-column justify-content-center align-items-center p-2 bg-primary-subtle rounded-4 m-2">
-              <p className="fs-4">Wind speed: <span className="text-dark fw-bold">{weatherData.wind.speed} km/h</span></p>
-              <p className="fs-4">Wind degrees: <span className="text-dark fw-bold">{weatherData.wind.deg}°</span></p>
+            <Col className="d-flex flex-column justify-content-center align-items-center p-2 rounded-4 shadow-lg p-3 mb-5 bg-body-secondary rounded-4 m-2">
+              <p className="fs-5 text-secondary">Wind speed: <span className="text-dark fw-bold">{weatherData.wind.speed} km/h</span></p>
+              <p className="fs-5 text-secondary">Wind degrees: <span className="text-dark fw-bold">{weatherData.wind.deg}°</span></p>
             </Col>
             </Row>
             </div>

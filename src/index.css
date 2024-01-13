@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background: linear-gradient(177deg, rgba(212,226,240,1) 0%, rgba(122,186,249,1) 50%, rgba(62,159,255,1) 100%);
+  background-color:#84c2ff;
 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

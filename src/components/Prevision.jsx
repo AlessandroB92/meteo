@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Row, Col} from 'react-bootstrap';
 import axios from 'axios';
 
 const Forecast = () => {
@@ -45,18 +46,20 @@ const Forecast = () => {
       </button>
 
       {forecastData && (
-        <div className="mt-3">
+        <Row className="mt-3">
           {forecastData.list.map((forecast, index) => (
-            <div key={index} className="card mb-3">
-              <div className="card-body">
-                <h5 className="card-title">{formatDate(forecast.dt)}</h5>
-                <p className="card-text">Temperature: {forecast.main.temp}°C</p>
-                <p className="card-text">Humidity: {forecast.main.humidity}%</p>
-                <p className="card-text">Weather: {forecast.weather[0].description}</p>
+            <Col xs={3}>
+              <div key={index} className="card shadow-lg mb-5 bg-warning rounded-4">
+                <div className="card-body">
+                  <h5 className="card-title text-capitalize">{formatDate(forecast.dt)}</h5>
+                  <p className="card-text">Temperature: {forecast.main.temp}°C</p>
+                  <p className="card-text">Humidity: {forecast.main.humidity}%</p>
+                  <p className="card-text">Weather: {forecast.weather[0].description}</p>
+                </div>
               </div>
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       )}
     </div>
   );
