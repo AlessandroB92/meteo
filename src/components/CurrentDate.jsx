@@ -31,7 +31,7 @@ const DateTime = () => {
   };
 
   return (
-    <div className="d-flex flex-column py-3 w-30">
+    <div className="d-flex flex-column p-3 w-30">
       <h4>Today's</h4>
       <p className="m-0 text-capitalize text-secondary">{formatDate(currentDateTime)}</p>
       <div className="d-flex align-items-center">

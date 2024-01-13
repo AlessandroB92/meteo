@@ -32,7 +32,7 @@ const Weather = () => {
     <div>
       <div className="mb-3 d-flex align-items-center justify-content-evenly bg-body-secondary">
         <CurrentDate />
-        <Row className=" w-50">
+        <Row className="p-3 w-50">
           <Col xs={12}><label htmlFor="locationInput" className="form-label mx-1">Enter City and Country:</label></Col>
           <Col>
             <input
