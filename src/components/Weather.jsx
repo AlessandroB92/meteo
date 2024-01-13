@@ -34,7 +34,7 @@ const Weather = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="es: Rome,IT"
+            placeholder="es: Rome , IT"
             id="locationInput"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
