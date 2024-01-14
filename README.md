@@ -1,3 +1,9 @@
+**METEO-APP**
+*Function*:
+This app allows you to receive the weather conditions of the desired city in real time.
+in the "forecast" section it is able to predict the weather for the next 5 days starting from the search date and time.
+within 24 hours it reports 8 weather updates, exactly every 3 hours starting from 00:00.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

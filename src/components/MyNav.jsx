@@ -11,8 +11,8 @@ const MyNav = () => {
           </Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <Link className="nav-link text-white" to="/Prevision">
-                Prevision
+              <Link className="nav-link text-white" to="/Forecast">
+                Forecast
               </Link>
             </ul>
           </div>
