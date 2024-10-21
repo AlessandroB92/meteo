@@ -3,6 +3,7 @@ import Weather from './components/Weather';
 import MyNav from './components/MyNav';
 import Forecast from './components/Forecast';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/Forecast' element={<Forecast />}></Route>
       </Routes>
     </BrowserRouter>
+      <Footer/>
     </>
   );
 }

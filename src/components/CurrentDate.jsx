@@ -32,11 +32,11 @@ const DateTime = () => {
 
   return (
     <div className="d-flex flex-column p-3 w-30">
-      <h4>Today's</h4>
-      <p className="m-0 text-capitalize text-secondary">{formatDate(currentDateTime)}</p>
+      <h3>Today's</h3>
+      <p className="m-0 text-capitalize text-secondary fs-2">{formatDate(currentDateTime)}</p>
       <div className="d-flex align-items-center">
-        <p className="m-0">{formatTime(currentDateTime)}</p>
-        <FaClock className="mx-2" />
+        <FaClock className="me-4 fs-2" />
+        <p className="m-0 fs-2">{formatTime(currentDateTime)}</p>
       </div>
     </div>
   );

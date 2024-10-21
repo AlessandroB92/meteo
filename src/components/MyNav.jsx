@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MovingComponent from "react-moving-text"
 
 const MyNav = () => {
   return (
@@ -18,7 +19,19 @@ const MyNav = () => {
           </div>
         </div>
       </nav>
-        <h1 className="bg-primary-subtle m-0 p-4 text-center border-top border-primary">Meteo-App</h1>
+      <div className="text-center m-auto p-5 bg-body-tertiary">
+        <MovingComponent
+          type="popIn"
+          duration="1800ms"
+          delay="1s"
+          direction="normal"
+          timing="ease-in-out"
+          iteration="5"
+          fillMode="none"
+        >
+          <h1 className="fs-1 text-primary fw-bold">My Meteo App!</h1>
+        </MovingComponent>
+      </div>
     </>
   );
 };
